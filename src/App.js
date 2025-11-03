@@ -77,7 +77,68 @@ export default function StrudelDemo() {
         globalEditor.stop()
     }
 
+    const handleProc = () => {
+        let processed = songText;
+        setSongText(processed)
+        handleVolumeChange(volume)
+
+    }
+
+    const handleProcAndPlay = () => {
+        let processed = songText;
+        setSongText(processed)
+        globalEditor.evaluate()
+    }
+
     const [songText, setSongText] = useState(stranger_tune)
+
+    //volume
+    const [volume, setVolume] = useState(1.0);
+
+    const handleVolumeChange = (newVol) => {
+        setVolume(newVol);
+
+        //regex solution to find and replace
+        const processed = songText.replace(
+            /all\(x\s*=>\s*x\.gain\([^)]+\)\)/g,  
+            `all(x => x.gain(${newVol}))`
+        );
+
+        setSongText(processed);
+
+        // reprocess and play immediately if runnnig
+        if (globalEditor != null && globalEditor.repl.state.started == true) {
+            globalEditor.setCode(processed);
+            globalEditor.evaluate();
+        }
+    };
+
+    const [bpm, setBpm] = useState(120);
+    const handleBpmChange = (newBpm) => {
+        setBpm(newBpm);
+
+        
+        const cps = newBpm/ 240; //convert bpm to cps
+
+        
+        let processed;
+        if (/setcps\([^)]+\)/g.test(songText)) {
+            // replace existing setcps()
+            processed = songText.replace(
+                /setcps\([^)]+\)/g,
+                `setcps(${cps})`
+            );
+        } else {
+            // add if missing
+            processed = `setcps(${cps})\n` + songText;
+        }
+
+        setSongText(processed);
+        if (globalEditor) {
+            globalEditor.setCode(processed);
+            globalEditor.evaluate();
+        }
+    };
 
 useEffect(() => {
 
@@ -133,7 +194,7 @@ return (
                     <div className="col-md-4">
 
                         <nav>
-                            <ProcButtons />
+                            <ProcButtons onProc={handleProc} onProcAndPlay={handleProcAndPlay} />
                             <br />
                             <PlayButtons onPlay={handlePlay} onStop={handleStop } />
                         </nav>
@@ -145,7 +206,7 @@ return (
                         <div id="output" />
                     </div>
                     <div className="col-md-4">
-                        <DJControls/>
+                        <DJControls volume={volume} bpm={bpm } onVolumeChange={handleVolumeChange} onBpmChange={handleBpmChange} />
                     </div>
                 </div>
             </div>

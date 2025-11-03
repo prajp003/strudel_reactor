@@ -1,13 +1,22 @@
-function DJControls() {
+import { useState } from 'react'
+function DJControls({ volume, bpm, onVolumeChange , onBpmChange}) {
+    const handleVolumeChange = (e) => {
+        const newVol = parseFloat(e.target.value)
+        onVolumeChange(newVol)
+    };
+    const handleBpmInput = (e) => {
+        const newBpm = parseFloat(e.target.value) || 0;
+        onBpmChange(newBpm);
+    };
     return (
         <>
             <div className="input-group mb-3">
-                <span className="input-group-text" id="cpm_label">CPM</span>
-                <input type="text" className="form-control" placeholder="120" id="cpm_text_input" aria-label="cpm" aria-describedby="cpm_label" />
+                <span className="input-group-text" id="cpm_label">BPM</span>
+                <input type="text" className="form-control" placeholder="120" id="bpm_text_input" aria-label="bpm" aria-describedby="bpm_label" onChange={handleBpmInput} />
             </div>
 
-            <label for="volume_range" className="form-label">Volume</label>
-            <input type="range" className="form-range" min="0" max="5" step="0.5" id="volume_range" />
+            <label for="volume_range" className="form-label">Volume {parseInt(volume*100)}%</label>
+            <input type="range" className="form-range" min="0" max="1" step="0.01" id="volume_range" value={volume} onChange={handleVolumeChange} />
 
             <div className="form-check">
                 <input className="form-check-input" type="checkbox" value="" id="s1"/>
