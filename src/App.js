@@ -1,4 +1,4 @@
-import './App.css';
+﻿import './App.css';
 import { useEffect, useRef, useState } from "react";
 import { StrudelMirror } from '@strudel/codemirror';
 import { evalScope } from '@strudel/core';
@@ -80,7 +80,7 @@ export default function StrudelDemo() {
     const handleProc = () => {
         let processed = songText;
         setSongText(processed)
-        handleVolumeChange(volume)
+        
 
     }
 
@@ -93,19 +93,44 @@ export default function StrudelDemo() {
     const [songText, setSongText] = useState(stranger_tune)
 
     //volume
-    const [volume, setVolume] = useState(1.0);
+    const [volume, setVolume] = useState(1);
 
     const handleVolumeChange = (newVol) => {
         setVolume(newVol);
 
-        //regex solution to find and replace
-        const processed = songText.replace(
-            /all\(x\s*=>\s*x\.gain\([^)]+\)\)/g,  
-            `all(x => x.gain(${newVol}))`
+        let processed = songText;        
+        
+        //add volume multiplier to existing any existing .gain()
+        processed = processed.replace(
+            /\.gain\(([^)]+)\)/g,
+            (_, inner) => `.gain((${inner}) * ${newVol})`
         );
-
-        setSongText(processed);
-
+        //if .gain() not existing add new gain and multiply by newVol
+        //regex finds all s(...) or note(...) to find all instruments
+        //searches for .gain() until a newline or comma
+        //excludes samples(...) or setcps(...)
+        processed = processed.replace(
+            /(?<!samples|setcps)(?:\b(?:s|note)\([^)]*\))(?![^,]*\.gain\()/g,
+            (match) => {
+                // continue if .gain( is existing
+                if (!/\.gain\(/.test(match)) {
+                    // find the index of the period after s(...) or note(...)
+                    const dotIndex = match.indexOf('.', match.indexOf(')'));
+                    // search for 
+                    if (dotIndex !== -1) {
+                        return (
+                            match.slice(0, dotIndex) + `.gain(1 * ${newVol})` + match.slice(dotIndex)
+                        );
+                    } else {
+                        // no dot found, just append gain at the end
+                        return match + `.gain(1 * ${newVol})`;
+                    }
+                }
+                return match;
+            }
+        );
+        
+        
         // reprocess and play immediately if runnnig
         if (globalEditor != null && globalEditor.repl.state.started == true) {
             globalEditor.setCode(processed);

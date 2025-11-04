@@ -19,23 +19,24 @@ function DJControls({ volume, bpm, onVolumeChange , onBpmChange}) {
             <input type="range" className="form-range" min="0" max="1" step="0.01" id="volume_range" value={volume} onChange={handleVolumeChange} />
 
             <div className="form-check">
-                <input className="form-check-input" type="checkbox" value="" id="s1"/>
-                    <label className="form-check-label" for="s1">
-                        s1
+                <input className="form-check-input" type="checkbox" value="" id="arp1"/>
+                    <label className="form-check-label" for="arp1">
+                        main arp
                     </label>
             </div>
             <div className="form-check">
                 <input className="form-check-input" type="checkbox" value="" id="d1"/>
                     <label className="form-check-label" for="d1">
-                        d1
+                        drum1
                     </label>
             </div>
             <div className="form-check">
                 <input className="form-check-input" type="checkbox" value="" id="d2" />
                     <label className="form-check-label" for="d2">
-                        d2
+                        drum2
                     </label>
             </div>
+            
         </>
     );
 }
