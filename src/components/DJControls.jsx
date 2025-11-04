@@ -36,7 +36,19 @@ function DJControls({ volume, bpm, onVolumeChange , onBpmChange}) {
                         drum2
                     </label>
             </div>
-            
+            <div className="form-check">
+                <input className="form-check-input" type="radio" name="radioDefault" id="gainPattern1" />
+                <label className="form-check-label" for="gainPattern1">
+                    gain pattern 1
+                </label>
+            </div>
+            <div className="form-check">
+                <input className="form-check-input" type="radio" name="radioDefault" id="gainPattern2" />
+                <label className="form-check-label" for="gainPattern2">
+                    gain pattern 2
+                </label>
+            </div>
+            <button type="button" class="btn btn-primary">All instruments</button>
         </>
     );
 }
