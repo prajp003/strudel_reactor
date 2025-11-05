@@ -213,24 +213,31 @@ return (
 
             <div className="container-fluid">
                 <div className="row">
-                    <div className="col-md-8" style={{ maxHeight: '50vh', overflowY: 'auto' }}>
-                        <PreProcText defaultValue={songText} onChange={(e) => setSongText(e.target.value)} />
+                    
+                    <div className="col-md-6" style={{ maxHeight: '50vh', overflowY: 'auto' }}>
+                        <div className="border border-secondary p-3">
+                            <PreProcText defaultValue={songText} onChange={(e) => setSongText(e.target.value)} />
+                        </div>
                     </div>
-                    <div className="col-md-4">
-
+                    
+                    <div className="col-md-6">
+                        
                         <nav>
-                            <ProcButtons onProc={handleProc} onProcAndPlay={handleProcAndPlay} />
-                            <br />
-                            <PlayButtons onPlay={handlePlay} onStop={handleStop } />
+                            <div className="border border-secondary p-3">
+                                <ProcButtons onProc={handleProc} onProcAndPlay={handleProcAndPlay} />
+                                
+                                <PlayButtons onPlay={handlePlay} onStop={handleStop} />
+                            </div>
                         </nav>
+                        
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-md-8" style={{ maxHeight: '50vh', overflowY: 'auto' }}>
+                    <div className="col-md-6" style={{ maxHeight: '50vh', overflowY: 'auto' }}>
                         <div id="editor" />
                         <div id="output" />
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-md-6">
                         <DJControls volume={volume} bpm={bpm } onVolumeChange={handleVolumeChange} onBpmChange={handleBpmChange} />
                     </div>
                 </div>
