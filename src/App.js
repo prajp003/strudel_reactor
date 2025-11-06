@@ -12,7 +12,9 @@ import console_monkey_patch, { getD3Data } from './console-monkey-patch';
 import DJControls from './components/DJControls';
 import PlayButtons from './components/PlayButtons';
 import ProcButtons from './components/ProcButtons';
-import PreProcText from './components/PreProcText'
+import PreProcText from './components/PreProcText';
+import VolumeSlider from './components/VolumeSlider';
+import BPMSelector from './components/BPMSelector'
 
 let globalEditor = null;
 
@@ -223,11 +225,21 @@ return (
                     <div className="col-md-6">
                         
                         <nav>
-                            <div className="border border-secondary p-3">
-                                <ProcButtons onProc={handleProc} onProcAndPlay={handleProcAndPlay} />
+                            <div className="row border border-secondary rounded p-2 align-items-center justify-content-between px-5">
+                                {/*<ProcButtons onProc={handleProc} onProcAndPlay={handleProcAndPlay} /> */}
+                                <div className="col-auto">
+                                    <PlayButtons onPlay={handlePlay} onStop={handleStop} />
+                                </div>
                                 
-                                <PlayButtons onPlay={handlePlay} onStop={handleStop} />
+                                
+                                <div className="col-md-6">
+                                    <VolumeSlider volume={volume} onVolumeChange={handleVolumeChange} />
+                                </div>
+                                <div className="col-md-3">
+                                    <BPMSelector bpm={bpm} onBpmChange={ handleBpmChange }/>
+                                </div>
                             </div>
+
                         </nav>
                         
                     </div>
@@ -236,8 +248,23 @@ return (
                     <div className="col-md-6" style={{ maxHeight: '50vh', overflowY: 'auto' }}>
                         <div id="editor" />
                         <div id="output" />
+                        
+                        
                     </div>
                     <div className="col-md-6">
+                        <div className="row mb-3 align-items-center">
+
+                            <div className="col-md-3">
+
+                            </div>
+
+
+                            <div className="col-md-9">
+
+
+                            </div>
+                        </div>
+                        
                         <DJControls volume={volume} bpm={bpm } onVolumeChange={handleVolumeChange} onBpmChange={handleBpmChange} />
                     </div>
                 </div>

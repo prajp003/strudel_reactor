@@ -1,46 +1,11 @@
 import { useState } from 'react'
-function DJControls({ volume, bpm, onVolumeChange , onBpmChange}) {
-    const handleVolumeChange = (e) => {
-        const newVol = parseFloat(e.target.value)
-        onVolumeChange(newVol)
-    };
-    const handleBpmInput = (e) => {
-        const newBpm = parseFloat(e.target.value) || 0;
-        onBpmChange(newBpm);
-    };
+function DJControls() {
+    
+    
     return (
         <div id="djcontrols" className="container-fluid">
 
-            <div className="row mb-3 align-items-center">
-
-                <div className="col-md-3">
-                    <div className="input-group border border-secondary rounded">
-                        
-                        <span className="input-group-text" id="bpm_label">BPM</span>
-                        <input
-                            type="text" className="form-control" placeholder="Enter BPM" id="bpm_text_input"
-                            aria-label="bpm" aria-describedby="bpm_label" onChange={handleBpmInput}
-                        />
-                    </div>
-                </div>
-
-
-                <div className="col-md-9">
-                    <div className="row align-items-center border border-secondary rounded " style={{ paddingTop: "4px", paddingBottom: "7px" }}>
-                        <div className="col-auto">
-                            <label htmlFor="volume_range" className="form-label mb-0 me-3 " >
-                                Volume {parseInt(volume * 100)}%
-                            </label>
-                        </div>
-                        <div className="col" >
-                            <input
-                                type="range" className="form-range" min="0" max="1" step="0.01" id="volume_range" style={{ verticalAlign: 'middle' }}
-                                value={volume} onChange={handleVolumeChange} />
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
+            
 
 
             <div className="row mb-3">
