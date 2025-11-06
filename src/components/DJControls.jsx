@@ -5,9 +5,9 @@ function DJControls({gainPattern, onGainPatternChange, onInstrumentToggle}) {
     return (
         <div id="djcontrols" className="container-fluid">
 
-            <div className="row mb-3">
+            <div className="row mb-3" style={{ display: 'flex', justifyContent: 'space-around', width: '100%' }}>
 
-                <div className="col-md-6">
+                <div className="col-md-5 border border-secondary rounded p-2">
                     <h6 className="section-label">Instruments</h6>
                     <div>
                         
@@ -36,7 +36,7 @@ function DJControls({gainPattern, onGainPatternChange, onInstrumentToggle}) {
                 </div>
 
 
-                <div className="col-md-6">
+                <div className="col-md-5 border border-secondary rounded p-2">
                     <h6 className="section-label">Gain Patterns</h6>
 
                     <div className="form-check">
