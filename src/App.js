@@ -111,6 +111,7 @@ export default function StrudelDemo() {
             globalEditor.setCode(processed);
             globalEditor.evaluate();
         }
+        ;
     };
 
     //volume
@@ -153,11 +154,12 @@ export default function StrudelDemo() {
         );
         
         
-        // reprocess and play immediately if runnnig
+        // reprocess and play immediately if runnning
         if (globalEditor != null && globalEditor.repl.state.started == true) {
             globalEditor.setCode(processed);
             globalEditor.evaluate();
         }
+        
     };
 
     const [bpm, setBpm] = useState(120);
@@ -182,6 +184,27 @@ export default function StrudelDemo() {
 
         setSongText(processed);
         if (globalEditor) {
+            globalEditor.setCode(processed);
+            globalEditor.evaluate();
+        }
+    };
+
+    const handleInstrumentToggle = (instrumentName, isChecked) => {
+        let processed = songText;
+
+        if (isChecked) {
+            // Restore the instrument name (remove underscore)
+            const regex = new RegExp(`_${instrumentName}\\s*:`, "g");
+            processed = processed.replace(regex, `${instrumentName}:`);
+        } else {
+            // Disable it by adding an underscore prefix
+            const regex = new RegExp(`(?<!_)\\b${instrumentName}\\s*:`, "g");
+            processed = processed.replace(regex, `_${instrumentName}:`);
+        }
+
+        setSongText(processed);
+
+        if (globalEditor && globalEditor.repl?.state?.started) {
             globalEditor.setCode(processed);
             globalEditor.evaluate();
         }
@@ -260,10 +283,16 @@ return (
                                 </div>
                             </div>
 
+
                         </nav>
+                        <div className="m-4">
+                            <DJControls gainPattern={gainPattern} onGainPatternChange={handleGainPatternChange} onInstrumentToggle={handleInstrumentToggle} />
+                        </div>
                         
                     </div>
+
                 </div>
+
                 <div className="row">
                     <div className="col-md-6" style={{ maxHeight: '50vh', overflowY: 'auto' }}>
                         <div id="editor" />
@@ -285,7 +314,7 @@ return (
                             </div>
                         </div>
 
-                        <DJControls gainPattern={gainPattern} onGainPatternChange={handleGainPatternChange} />
+                        
                     </div>
                 </div>
             </div>

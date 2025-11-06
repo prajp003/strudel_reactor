@@ -1,38 +1,38 @@
 import { useState } from 'react'
-function DJControls({gainPattern, onGainPatternChange}) {
+function DJControls({gainPattern, onGainPatternChange, onInstrumentToggle}) {
     
     
     return (
         <div id="djcontrols" className="container-fluid">
 
-            
-
-
             <div className="row mb-3">
 
                 <div className="col-md-6">
                     <h6 className="section-label">Instruments</h6>
+                    <div>
+                        
 
-                    <div className="form-check">
-                        <input className="form-check-input" type="checkbox" id="arp1" />
-                        <label className="form-check-label" htmlFor="arp1">
-                            Main Arp
-                        </label>
+                        {[
+                            { id: "bassline", label: "Bassline" },
+                            { id: "main_arp", label: "Main Arp" },
+                            { id: "drums", label: "Drum 1" },
+                            { id: "drums2", label: "Drum 2" },
+                        ].map(inst => (
+                            <div className="form-check" key={inst.id}>
+                                <input
+                                    className="form-check-input"
+                                    type="checkbox"
+                                    id={inst.id}
+                                    defaultChecked
+                                    onChange={(e) => onInstrumentToggle(inst.id, e.target.checked)}
+                                />
+                                <label className="form-check-label" htmlFor={inst.id}>
+                                    {inst.label}
+                                </label>
+                            </div>
+                        ))}
                     </div>
-
-                    <div className="form-check">
-                        <input className="form-check-input" type="checkbox" id="d1" />
-                        <label className="form-check-label" htmlFor="d1">
-                            Drum 1
-                        </label>
-                    </div>
-
-                    <div className="form-check">
-                        <input className="form-check-input" type="checkbox" id="d2" />
-                        <label className="form-check-label" htmlFor="d2">
-                            Drum 2
-                        </label>
-                    </div>
+                    
                 </div>
 
 
