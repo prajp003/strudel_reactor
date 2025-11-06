@@ -94,6 +94,25 @@ export default function StrudelDemo() {
 
     const [songText, setSongText] = useState(stranger_tune)
 
+    const [instruments, setInstruments] = useState([]);
+    function extractInstruments(songText) {
+        //finds line that have "something" + ":"
+        const regex = /^\s*([a-zA-Z0-9_]+)\s*:/gm;
+        const instruments = [];
+        let match;
+
+        while ((match = regex.exec(songText)) !== null) {
+            instruments.push(match[1]);
+        }
+        console.log("detected instruments:", instruments);
+        return instruments;
+    }
+
+    useEffect(() => {
+        const detected = extractInstruments(songText);
+        setInstruments(detected);
+    }, [songText]);
+
     //gain pattern
     const [gainPattern, setGainPattern] = useState(0);
 
