@@ -1,5 +1,5 @@
 import { useState } from 'react'
-function DJControls() {
+function DJControls({gainPattern, onGainPatternChange}) {
     
     
     return (
@@ -41,7 +41,7 @@ function DJControls() {
 
                     <div className="form-check">
                         <input
-                            className="form-check-input" type="radio" name="radioDefault" id="gainPattern1"
+                            className="form-check-input" type="radio" name="radioDefault" id="gainPattern1" onChange={() => onGainPatternChange(0)}
                         />
                         <label className="form-check-label" htmlFor="gainPattern1">
                             Gain Pattern 1
@@ -50,10 +50,18 @@ function DJControls() {
 
                     <div className="form-check">
                         <input
-                            className="form-check-input" type="radio" name="radioDefault" id="gainPattern2"
+                            className="form-check-input" type="radio" name="radioDefault" id="gainPattern2" onChange={() => onGainPatternChange(1)}
                         />
                         <label className="form-check-label" htmlFor="gainPattern2">
                             Gain Pattern 2
+                        </label>
+                    </div>
+                    <div className="form-check">
+                        <input
+                            className="form-check-input" type="radio" name="radioDefault" id="gainPattern3" onChange={() => onGainPatternChange(2)}
+                        />
+                        <label className="form-check-label" htmlFor="gainPattern3">
+                            Gain Pattern 3
                         </label>
                     </div>
                 </div>

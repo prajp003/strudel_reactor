@@ -94,8 +94,28 @@ export default function StrudelDemo() {
 
     const [songText, setSongText] = useState(stranger_tune)
 
+    //gain pattern
+    const [gainPattern, setGainPattern] = useState(0);
+
+    const handleGainPatternChange = (newPattern) => {
+        setGainPattern(newPattern);
+        
+        const processed = songText.replace(
+            /const\s+pattern\s*=\s*\d+/,
+            `const pattern = ${newPattern}`
+        );
+
+        setSongText(processed);
+
+        if (globalEditor && globalEditor.repl?.state?.started) {
+            globalEditor.setCode(processed);
+            globalEditor.evaluate();
+        }
+    };
+
     //volume
     const [volume, setVolume] = useState(1);
+
 
     const handleVolumeChange = (newVol) => {
         setVolume(newVol);
@@ -124,7 +144,7 @@ export default function StrudelDemo() {
                             match.slice(0, dotIndex) + `.gain(1 * ${newVol})` + match.slice(dotIndex)
                         );
                     } else {
-                        // no dot found, just append gain at the end
+                        // no period found, just append gain at the end
                         return match + `.gain(1 * ${newVol})`;
                     }
                 }
@@ -224,8 +244,8 @@ return (
                     
                     <div className="col-md-6">
                         
-                        <nav>
-                            <div className="row border border-secondary rounded p-2 align-items-center justify-content-between px-5">
+                        <nav className="d-flex justify-content-center">
+                            <div className="row border border-secondary rounded p-2 align-items-center justify-content-between " style={{ maxWidth: "95%" }}>
                                 {/*<ProcButtons onProc={handleProc} onProcAndPlay={handleProcAndPlay} /> */}
                                 <div className="col-auto">
                                     <PlayButtons onPlay={handlePlay} onStop={handleStop} />
@@ -264,8 +284,8 @@ return (
 
                             </div>
                         </div>
-                        
-                        <DJControls volume={volume} bpm={bpm } onVolumeChange={handleVolumeChange} onBpmChange={handleBpmChange} />
+
+                        <DJControls gainPattern={gainPattern} onGainPatternChange={handleGainPatternChange} />
                     </div>
                 </div>
             </div>

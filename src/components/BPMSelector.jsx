@@ -9,7 +9,7 @@ function BPMSelector({ bpm, onBpmChange}) {
 
               <span className="input-group-text" id="bpm_label">BPM</span>
               <input
-                  type="text" className="form-control" placeholder="Enter BPM" id="bpm_text_input"
+                  type="text" className="form-control" placeholder="BPM" id="bpm_text_input"
                   aria-label="bpm" aria-describedby="bpm_label" onChange={handleBpmInput}
               />
           </div>
