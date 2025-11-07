@@ -1,4 +1,4 @@
-let originalLog = null;
+﻿let originalLog = null;
 const logArray = [];
 
 
@@ -10,6 +10,7 @@ export default function console_monkey_patch() {
     originalLog = console.log;
 
     //Overwrite console.log function
+
     console.log = function (...args) {
         //Join args with space, default behaviour. Check for [hap], that's a strudel prefix
         if (args.join(" ").substring(0, 8) === "%c[hap] ")

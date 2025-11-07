@@ -8,64 +8,20 @@ import { transpiler } from '@strudel/transpiler';
 import { getAudioContext, webaudioOutput, registerSynthSounds } from '@strudel/webaudio';
 import { registerSoundfonts } from '@strudel/soundfonts';
 import { stranger_tune } from './tunes';
-import console_monkey_patch, { getD3Data } from './console-monkey-patch';
+import console_monkey_patch, { getD3Data, subscribe, unsubscribe} from './console-monkey-patch';
 import DJControls from './components/DJControls';
 import PlayButtons from './components/PlayButtons';
 import ProcButtons from './components/ProcButtons';
 import PreProcText from './components/PreProcText';
 import VolumeSlider from './components/VolumeSlider';
-import BPMSelector from './components/BPMSelector'
+import BPMSelector from './components/BPMSelector';
+import Graph from './components/Graph'
 
 let globalEditor = null;
 
 const handleD3Data = (event) => {
     console.log(event.detail);
 };
-
-//export function SetupButtons() {
-
-//    //document.getElementById('play').addEventListener('click', () => globalEditor.evaluate());
-//    //document.getElementById('stop').addEventListener('click', () => globalEditor.stop());
-//    //document.getElementById('process').addEventListener('click', () => {
-//    //    Proc()
-//    //}
-//    //)
-//    //document.getElementById('process_play').addEventListener('click', () => {
-//    //    if (globalEditor != null) {
-//    //        Proc()
-//    //        globalEditor.evaluate()
-//    //    }
-//    //}
-//    //)
-//}
-
-
-
-//export function ProcAndPlay() {
-//    //if (globalEditor != null && globalEditor.repl.state.started == true) {
-//    //    console.log(globalEditor)
-//    //    Proc()
-//    //    globalEditor.evaluate();
-//    //}
-//}
-
-//export function Proc() {
-
-//    //let proc_text = document.getElementById('proc').value
-//    //let proc_text_replaced = proc_text.replaceAll('<p1_Radio>', ProcessText);
-//    //ProcessText(proc_text);
-//    //globalEditor.setCode(proc_text_replaced)
-//}
-
-//export function ProcessText(match, ...args) {
-
-//    let replace = ""
-//    //if (document.getElementById('flexRadioDefault2').checked) {
-//    //    replace = "_"
-//    //}
-
-//    return replace
-//}
 
 export default function StrudelDemo() {
 
@@ -97,6 +53,20 @@ export default function StrudelDemo() {
     const [showPreProc, setShowPreProc] = useState(true);
 
     const [instruments, setInstruments] = useState([]);
+
+    const [volume, setVolume] = useState(1);
+
+    const [strudelData, setStrudelData] = useState([]);
+
+    useEffect(() => {
+        //subscribe and unsubscribe from d3 data, e.detail is data array
+        const onD3Data = (e) => setStrudelData(e.detail);
+        subscribe("d3Data", onD3Data);
+        console.log("strudelData:", strudelData)
+        return () => unsubscribe("d3Data", onD3Data);
+    }, []);
+
+    
     function extractInstruments(songText) {
         //finds line that have "something" + ":"
         const regex = /^\s*([a-zA-Z0-9_]+)\s*:/gm;
@@ -135,8 +105,7 @@ export default function StrudelDemo() {
         ;
     };
 
-    //volume
-    const [volume, setVolume] = useState(1);
+    
 
 
     const handleVolumeChange = (newVol) => {
@@ -234,8 +203,9 @@ export default function StrudelDemo() {
 useEffect(() => {
 
     if (!hasRun.current) {
-        document.addEventListener("d3Data", handleD3Data);
+        
         console_monkey_patch();
+        
         hasRun.current = true;
         //Code copied from example: https://codeberg.org/uzu/strudel/src/branch/main/examples/codemirror-repl
             //init canvas
@@ -331,8 +301,9 @@ return (
                         
                     </div>
                     <div className="col-md-6">
+                        <Graph data={strudelData} />
                         <div className="row mb-3 align-items-center">
-
+                           
                             <div className="col-md-3">
 
                             </div>
