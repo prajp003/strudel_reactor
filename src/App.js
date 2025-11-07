@@ -94,6 +94,8 @@ export default function StrudelDemo() {
 
     const [songText, setSongText] = useState(stranger_tune)
 
+    const [showPreProc, setShowPreProc] = useState(true);
+
     const [instruments, setInstruments] = useState([]);
     function extractInstruments(songText) {
         //finds line that have "something" + ":"
@@ -272,16 +274,21 @@ useEffect(() => {
 
 return (
     <div>
-        <h2>Strudel Demo</h2>
+        <div className>
+            <h2>Strudel Demo</h2>
+        </div>
+        
         <main>
 
             <div className="container-fluid">
                 <div className="row">
                     
                     <div className="col-md-6" style={{ maxHeight: '50vh', overflowY: 'auto' }}>
-                        <div className="border border-secondary p-3">
-                            <PreProcText defaultValue={songText} onChange={(e) => setSongText(e.target.value)} />
-                        </div>
+                        {showPreProc && (
+                            <div className="border border-secondary p-3">
+                                <PreProcText defaultValue={songText} onChange={(e) => setSongText(e.target.value)} />
+                            </div>
+                        )}
                     </div>
                     
                     <div className="col-md-6">
@@ -304,9 +311,13 @@ return (
 
 
                         </nav>
-                        <div className="m-4">
-                            <DJControls gainPattern={gainPattern} onGainPatternChange={handleGainPatternChange} onInstrumentToggle={handleInstrumentToggle} />
-                        </div>
+                        <DJControls
+                            gainPattern={gainPattern}
+                            onGainPatternChange={handleGainPatternChange}
+                            onInstrumentToggle={handleInstrumentToggle}
+                            showPreProc={showPreProc}
+                            onTogglePreProc={setShowPreProc}
+                        />
                         
                     </div>
 
