@@ -58,6 +58,7 @@ export default function StrudelDemo() {
 
     const [strudelData, setStrudelData] = useState([]);
 
+    
     useEffect(() => {
         //subscribe and unsubscribe from d3 data, e.detail is data array
         const onD3Data = (e) => setStrudelData(e.detail);
@@ -237,8 +238,10 @@ useEffect(() => {
         document.getElementById('proc').value = stranger_tune
         //SetupButtons()
         //Proc()
+        
     }
     globalEditor.setCode(songText);
+   
 }, [songText]);
 
 
@@ -272,7 +275,7 @@ return (
                                 
                                 
                                 <div className="col-md-6">
-                                    <VolumeSlider volume={volume} onVolumeChange={handleVolumeChange} />
+                                    <VolumeSlider volume={volume} onVolumeChange={handleVolumeChange} gainPattern={gainPattern} />
                                 </div>
                                 <div className="col-md-3">
                                     <BPMSelector bpm={bpm} onBpmChange={ handleBpmChange }/>

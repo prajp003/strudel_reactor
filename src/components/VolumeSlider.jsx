@@ -1,9 +1,20 @@
-function VolumeSlider({ volume, onVolumeChange }) {
+
+import { useEffect } from "react";
+function VolumeSlider({ volume, onVolumeChange, gainPattern }) {
     const handleVolumeChange = (e) => {
         const newVol = parseFloat(e.target.value)
         onVolumeChange(newVol)
     };
-  return (
+
+    //patch for gain affecting volumeslider
+    useEffect(() => {
+        console.log("Gain pattern changed");
+        onVolumeChange(volume);
+    }, [gainPattern]);
+
+
+    return (
+
       <div id="VolumeSlider">
           <div className="row align-items-center border border-secondary rounded " style={{ paddingTop: "4px", paddingBottom: "7px" }}>
               <div className="col-auto">
