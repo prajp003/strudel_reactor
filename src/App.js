@@ -153,7 +153,7 @@ export default function StrudelDemo() {
         
     };
 
-    const [bpm, setBpm] = useState(120);
+    const [bpm, setBpm] = useState(140);
     const handleBpmChange = (newBpm) => {
         setBpm(newBpm);
 
