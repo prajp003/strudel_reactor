@@ -51,9 +51,13 @@ function DJControls({ gainPattern, onGainPatternChange, onInstrumentToggle, mode
             </div>
 
             <div className="row mt-3">
-                <button onClick={() => onToggleMode(prev => prev === "gain" ? "room" : "gain")}>
-                    {mode === "gain" ? "TOGGLE ROOM GRAPH" : "TOGGLE GAIN GRAPH"}
-                </button>
+                
+                <div className="col-md-4">
+                    <button className="btn btn-primary" onClick={() => onToggleMode(prev => prev === "gain" ? "room" : "gain")}>
+                        {mode === "gain" ? "TOGGLE ROOM GRAPH" : "TOGGLE GAIN GRAPH"}
+                    </button>
+                </div>
+                
                 
             </div>
         </div>

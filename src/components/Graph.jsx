@@ -55,6 +55,15 @@ function Graph({ data, mode}) {
 
         const y = d3.scaleLinear().domain([0, 1.5]).range([h, 0]);
 
+        //title
+        svg.append("text")
+            .attr("x", width / 2)
+            .attr("y", margin.top + 10)
+            .attr("text-anchor", "middle")
+            .attr("font-size", "18px")
+            .attr("font-weight", "bold")
+            .text(mode.toUpperCase()); 
+
         // axes 
         g.append("g")
             .attr("transform", `translate(0,${h})`)
@@ -91,7 +100,7 @@ function Graph({ data, mode}) {
             .attr("d", line);
 
         
-    }, [series]);
+    }, [series, mode]);
 
     
     return (
