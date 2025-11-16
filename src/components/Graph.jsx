@@ -4,30 +4,30 @@ import * as d3 from "d3";
 const handleD3Data = (event) => {
     console.log(event.detail);
 };
-function LogToNum(input) {
+function LogToNum(input, mode) {
     if (!input) { return 0 }
     var stringArray = input.split(/(\s+)/);
     for (const item of stringArray) {
-        if (item.startsWith("gain:")) {
-            let val = item.substring(5);
+        if (item.startsWith(mode + ":")) {
+            let val = item.substring(mode.length + 1);
             return Number(val);
         }
     }
     return 0;
 }
-function Graph({ data }) {
+function Graph({ data, mode}) {
     const svgRef = useRef(null);
 
     
     const series = useMemo(() => {
         
-        const vals = (data || []).map(LogToNum)
+        const vals = (data || []).map(item => LogToNum(item, mode))
             // filter nulls 
             .filter((v) => v !== null && !Number.isNaN(v));
 
         // create data for D3
         return vals.map((y, i) => ({ x: i, y }));
-    }, [data]);
+    }, [data, mode]);
 
     useEffect(() => {
         const svg = d3.select(svgRef.current);

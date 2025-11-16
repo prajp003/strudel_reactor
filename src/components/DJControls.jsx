@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-function DJControls({ gainPattern, onGainPatternChange, onInstrumentToggle, showPreProc, onTogglePreProc }) {
-
+function DJControls({ gainPattern, onGainPatternChange, onInstrumentToggle, mode, onToggleMode }) {
+    
     return (
         <div id="djcontrols" className="container-fluid">
             <div className="row mb-3" style={{ display: 'flex', justifyContent: 'space-around', width: '100%' }}>
@@ -51,19 +51,10 @@ function DJControls({ gainPattern, onGainPatternChange, onInstrumentToggle, show
             </div>
 
             <div className="row mt-3">
-                <div className="col text-center">
-                    <input
-                        type="checkbox"
-                        className="btn-check"
-                        id="showPreProcText"
-                        autoComplete="off"
-                        checked={showPreProc}
-                        onChange={(e) => onTogglePreProc(e.target.checked)}
-                    />
-                    <label className="btn btn-primary" htmlFor="showPreProcText">
-                        {showPreProc ? "Hide Preprocess Text Area" : "Show Preprocess Text Area"}
-                    </label>
-                </div>
+                <button onClick={() => onToggleMode(prev => prev === "gain" ? "room" : "gain")}>
+                    {mode === "gain" ? "TOGGLE ROOM GRAPH" : "TOGGLE GAIN GRAPH"}
+                </button>
+                
             </div>
         </div>
     );

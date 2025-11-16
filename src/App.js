@@ -49,14 +49,15 @@ export default function StrudelDemo() {
 
     const [songText, setSongText] = useState(stranger_tune)
 
-    const [showPreProc, setShowPreProc] = useState(true);
-
     const [instruments, setInstruments] = useState([]);
     
     const [volume, setVolume] = useState(1);
 
     const [strudelData, setStrudelData] = useState([]);
 
+    const [graphMode, setGraphMode] = useState("gain");
+
+    
     
     useEffect(() => {
         //subscribe and unsubscribe from d3 data, e.detail is data array
@@ -256,7 +257,7 @@ return (
                 <div className="row">
                     
                     <div className="col-md-6" style={{ maxHeight: '40vh', overflowY: 'auto' }}>
-                        {showPreProc && (
+                        {(
                             <div className="border border-secondary p-3">
                                 <PreProcText defaultValue={songText} onChange={(e) => setSongText(e.target.value)} />
                             </div>
@@ -284,11 +285,7 @@ return (
 
                         </nav>
                         <DJControls
-                            gainPattern={gainPattern}
-                            onGainPatternChange={handleGainPatternChange}
-                            onInstrumentToggle={handleInstrumentToggle}
-                            showPreProc={showPreProc}
-                            onTogglePreProc={setShowPreProc}
+                            gainPattern={gainPattern} onGainPatternChange={handleGainPatternChange} onInstrumentToggle={handleInstrumentToggle} mode={graphMode}  onToggleMode={setGraphMode}
                         />
                         
                     </div>
@@ -303,7 +300,7 @@ return (
                         
                     </div>
                     <div className="col-md-6">
-                        <Graph data={strudelData} />
+                        <Graph data={strudelData} mode={graphMode} />
                         <div className="row mb-3 align-items-center">
                            
                             <div className="col-md-3">
