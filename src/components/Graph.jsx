@@ -1,6 +1,9 @@
 import React, { useEffect, useMemo, useRef } from "react";
 import * as d3 from "d3";
 //take strudel data and return gain:
+const handleD3Data = (event) => {
+    console.log(event.detail);
+};
 function LogToNum(input) {
     if (!input) { return 0 }
     var stringArray = input.split(/(\s+)/);

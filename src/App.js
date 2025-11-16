@@ -19,16 +19,15 @@ import Graph from './components/Graph'
 
 let globalEditor = null;
 
-const handleD3Data = (event) => {
-    console.log(event.detail);
-};
 
 export default function StrudelDemo() {
 
     const hasRun = useRef(false);
 
     const handlePlay = () => {
+        
         globalEditor.evaluate()
+
     }
 
     const handleStop = () => {
@@ -53,7 +52,7 @@ export default function StrudelDemo() {
     const [showPreProc, setShowPreProc] = useState(true);
 
     const [instruments, setInstruments] = useState([]);
-
+    
     const [volume, setVolume] = useState(1);
 
     const [strudelData, setStrudelData] = useState([]);
@@ -247,8 +246,8 @@ useEffect(() => {
 
 return (
     <div>
-        <div className>
-            <h2>Strudel Demo</h2>
+        <div className="d-flex justify-content-center">
+            <h2 >Strudel Demo</h2>
         </div>
         
         <main>
@@ -256,7 +255,7 @@ return (
             <div className="container-fluid">
                 <div className="row">
                     
-                    <div className="col-md-6" style={{ maxHeight: '50vh', overflowY: 'auto' }}>
+                    <div className="col-md-6" style={{ maxHeight: '40vh', overflowY: 'auto' }}>
                         {showPreProc && (
                             <div className="border border-secondary p-3">
                                 <PreProcText defaultValue={songText} onChange={(e) => setSongText(e.target.value)} />
@@ -275,7 +274,7 @@ return (
                                 
                                 
                                 <div className="col-md-6">
-                                    <VolumeSlider volume={volume} onVolumeChange={handleVolumeChange} gainPattern={gainPattern} />
+                                    <VolumeSlider volume={volume} onVolumeChange={handleVolumeChange} gainPatternUpdate={gainPattern} bpmUpdate={bpm} instrumentUpdate={instruments}/>
                                 </div>
                                 <div className="col-md-3">
                                     <BPMSelector bpm={bpm} onBpmChange={ handleBpmChange }/>

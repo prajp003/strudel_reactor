@@ -1,16 +1,17 @@
 
 import { useEffect } from "react";
-function VolumeSlider({ volume, onVolumeChange, gainPattern }) {
+function VolumeSlider({ volume, onVolumeChange, gainPatternUpdate, bpmUpdate, instrumentUpdate }) {
     const handleVolumeChange = (e) => {
         const newVol = parseFloat(e.target.value)
         onVolumeChange(newVol)
     };
 
-    //patch for gain affecting volumeslider
+    //patch for other components affecting volumeslider
+    //just update volume when other components are altered.
     useEffect(() => {
-        console.log("Gain pattern changed");
+        console.log("setting changed");
         onVolumeChange(volume);
-    }, [gainPattern]);
+    }, [gainPatternUpdate, bpmUpdate, instrumentUpdate]);
 
 
     return (
@@ -28,7 +29,9 @@ function VolumeSlider({ volume, onVolumeChange, gainPattern }) {
                       value={volume} onChange={handleVolumeChange} />
               </div>
           </div>
-      </div>
+        </div>
+
+
   );
 }
 

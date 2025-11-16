@@ -30,7 +30,7 @@ function BPMSelector({ bpm, onBpmChange }) {
                 <input
                     type="text"
                     className="form-control"
-                    placeholder="BPM"
+                    placeholder="0"
                     id="bpm_text_input"
                     aria-label="bpm"
                     aria-describedby="bpm_label"
