@@ -40,6 +40,7 @@ function DJControls({ gainPattern, onGainPatternChange, onInstrumentToggle, show
                                 name="radioDefault"
                                 id={`gainPattern${num + 1}`}
                                 onChange={() => onGainPatternChange(num)}
+                                defaultChecked={num === 0}
                             />
                             <label className="form-check-label" htmlFor={`gainPattern${num + 1}`}>
                                 Gain Pattern {num + 1}
