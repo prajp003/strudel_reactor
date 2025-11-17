@@ -295,7 +295,7 @@ return (
 
                         </nav>
                         <DJControls
-                            gainPattern={gainPattern} onGainPatternChange={handleGainPatternChange} onInstrumentToggle={handleInstrumentToggle} mode={graphMode}  onToggleMode={setGraphMode}
+                            gainPattern={gainPattern} onGainPatternChange={handleGainPatternChange} onInstrumentToggle={handleInstrumentToggle}
                         />
                         
                     </div>
@@ -314,7 +314,7 @@ return (
                         <Graph mode={selectedGraph === "live" ? graphMode : graphPresets[selectedGraph].mode} data={selectedGraph === "live" ? strudelData : graphPresets[selectedGraph].data} />
                         <div className="row mb-3 align-items-center">
                            
-                            <div className="col-md-4
+                            <div className="col-md-3
 ">
                                 <button className="btn btn-primary"
                                     onClick={() => {
@@ -329,7 +329,7 @@ return (
                                         console.log("snapshotData: ", snapshot)
                                     }}
                                 >
-                                    Save Graph Snapshot
+                                    TAKE SNAPSHOT
                                 </button>
                             </div>
 
@@ -343,11 +343,17 @@ return (
 
                                     {graphPresets.map((preset, index) => (
                                         <option key={index} value={index}>
-                                            Saved ({preset.mode}) - {new Date(preset.created).toLocaleTimeString()}
+                                            Saved ({preset.mode}) - {new Date(preset.created).toLocaleString()}
                                         </option>
                                     ))}
                                 </select>
 
+                            </div>
+
+                            <div className="col-md-4">
+                                <button className="btn btn-primary" onClick={() => setGraphMode(prev => prev === "gain" ? "room" : "gain")}>
+                                    {graphMode === "gain" ? "SHOW ROOM GRAPH" : "SHOW GAIN GRAPH"}
+                                </button>
                             </div>
                         </div>
 

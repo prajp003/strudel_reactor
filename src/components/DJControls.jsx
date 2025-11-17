@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function DJControls({ gainPattern, onGainPatternChange, onInstrumentToggle, mode, onToggleMode }) {
+function DJControls({ gainPattern, onGainPatternChange, onInstrumentToggle }) {
     
     return (
         <div id="djcontrols" className="container-fluid">
@@ -53,9 +53,10 @@ function DJControls({ gainPattern, onGainPatternChange, onInstrumentToggle, mode
             <div className="row mt-3">
                 
                 <div className="col-md-4">
-                    <button className="btn btn-primary" onClick={() => onToggleMode(prev => prev === "gain" ? "room" : "gain")}>
-                        {mode === "gain" ? "TOGGLE ROOM GRAPH" : "TOGGLE GAIN GRAPH"}
-                    </button>
+                    
+                </div>
+                <div className="col-md-4">
+                    
                 </div>
                 
                 
