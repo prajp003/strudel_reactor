@@ -321,7 +321,14 @@ return (
                                         const snapshot = {
                                             mode: graphMode,
                                             data: strudelData,
-                                            created: Date.now()
+                                            created: Date.now(),
+                                            settings: {
+                                                bpm,
+                                                volume,
+                                                gainPattern,
+                                                instrumentsEnabled: instruments,
+                                                
+                                            }
                                         };
 
                                         setGraphPresets(prev => [...prev, snapshot]);
