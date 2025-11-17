@@ -54,11 +54,21 @@ export default function StrudelDemo() {
     const [volume, setVolume] = useState(1);
 
     const [strudelData, setStrudelData] = useState([]);
-
+    //toggle for graph display type, gain or room.
     const [graphMode, setGraphMode] = useState("gain");
+    //save json locally
+    const [graphPresets, setGraphPresets] = useState(() => {
+        const saved = localStorage.getItem("graphPresets");
+        return saved ? JSON.parse(saved) : [];
+    });
+        
+    //for graph json snapshot display
+    const [selectedGraph, setSelectedGraph] = useState("live");
+    
+    useEffect(() => {
+        localStorage.setItem("graphPresets", JSON.stringify(graphPresets));
+    }, [graphPresets]);
 
-    
-    
     useEffect(() => {
         //subscribe and unsubscribe from d3 data, e.detail is data array
         const onD3Data = (e) => setStrudelData(e.detail);
@@ -300,16 +310,43 @@ return (
                         
                     </div>
                     <div className="col-md-6">
-                        <Graph data={strudelData} mode={graphMode} />
+
+                        <Graph mode={selectedGraph === "live" ? graphMode : graphPresets[selectedGraph].mode} data={selectedGraph === "live" ? strudelData : graphPresets[selectedGraph].data} />
                         <div className="row mb-3 align-items-center">
                            
-                            <div className="col-md-3">
+                            <div className="col-md-4
+">
+                                <button className="btn btn-primary"
+                                    onClick={() => {
+                                        const snapshot = {
+                                            mode: graphMode,
+                                            data: strudelData,
+                                            created: Date.now()
+                                        };
 
+                                        setGraphPresets(prev => [...prev, snapshot]);
+                                        alert("Graph preset saved!");
+                                        console.log("snapshotData: ", snapshot)
+                                    }}
+                                >
+                                    Save Graph Snapshot
+                                </button>
                             </div>
 
+                            <div className="col-md-5">
+                                <select
+                                    className="form-select my-2"
+                                    value={selectedGraph}
+                                    onChange={(e) => setSelectedGraph(e.target.value)}
+                                >
+                                    <option value="live">Live Graph</option>
 
-                            <div className="col-md-9">
-
+                                    {graphPresets.map((preset, index) => (
+                                        <option key={index} value={index}>
+                                            Saved ({preset.mode}) - {new Date(preset.created).toLocaleTimeString()}
+                                        </option>
+                                    ))}
+                                </select>
 
                             </div>
                         </div>
