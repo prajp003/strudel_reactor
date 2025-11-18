@@ -3,7 +3,7 @@ import { useState } from 'react';
 function DJControls({ gainPattern, onGainPatternChange, onInstrumentToggle }) {
     
     return (
-        <div id="djcontrols" className="container-fluid">
+        <div id="djcontrols" className="container-fluid d-flex justify-content-center">
             <div className="row mb-3" style={{ display: 'flex', justifyContent: 'space-around', width: '100%' }}>
 
                 <div className="col-md-5 border border-secondary rounded p-2">
@@ -48,18 +48,6 @@ function DJControls({ gainPattern, onGainPatternChange, onInstrumentToggle }) {
                         </div>
                     ))}
                 </div>
-            </div>
-
-            <div className="row mt-3">
-                
-                <div className="col-md-4">
-                    
-                </div>
-                <div className="col-md-4">
-                    
-                </div>
-                
-                
             </div>
         </div>
     );

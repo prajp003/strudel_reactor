@@ -1,4 +1,4 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 
 function BPMSelector({ bpm, onBpmChange }) {
     const [warning, setWarning] = useState("");
