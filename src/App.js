@@ -304,7 +304,7 @@ return (
                                 <div className="border border-secondary rounded p-3">
                                     <div className="row">
                                         <div className="col col-auto d-flex align-items-center">
-                                            <p className="m-0">Snapshot Settings</p>
+                                            <p className="m-0">Snapshot {new Date(graphPresets[selectedGraph].created).toLocaleString() } Mode: {graphPresets[selectedGraph].mode}</p>
                                         </div>
                                         <div className="col col-auto">
                                             <button className="btn btn-primary" onClick={() => {
@@ -350,7 +350,7 @@ return (
                                                 bpm,
                                                 volume,
                                                 gainPattern,
-                                                instrumentsEnabled: instruments,
+                                                instrumentsEnabled: instruments.filter(i=>!i.startsWith("_")),    
                                                 
                                             }
                                         };
