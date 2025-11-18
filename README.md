@@ -1,70 +1,28 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Controls:
 
-## Available Scripts
+- Volume slider:
+	Changes the volume for ALL instruments. Its default value is 100%. Its lowest value is 0%.
+	Gain changes are visible in the gain graph too.
 
-In the project directory, you can run:
+- BPM selector:	
+	Typing your desired BPM into the BPM selector will automatically change the BPM of the song. 
+	Integers only, the BPM selector has input validation.
 
-### `npm start`
+- Instruments selector:
+	Clicking on the checkbox will disable the instrument. Can be re-enabled by clicking the box once again.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Gain pattern selector:
+	Selecting an option from the gain pattern selector radio allows you to switch between the 3 gain patterns provided.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Graph mode:
+	Clicking on the 'SHOW ROOM GRAPH' button allows you to toggle between viewing the room and gain of the instruments playing.
 
-### `npm test`
+- Snapshots:
+	Snapshots turn the current graph and DJ controls into a JSON object, allowing your 'snapshot in time' to be viewed later.
+	A snapshot can be taken using the 'TAKE SNAPSHOT' button. 
+	Your snapshots can be viewed by expanding the dropdown at the bottom of the graph.
+	Snapshot names include their time, date and graph mode.
+	When viewing a snapshot, above the graph will be the name of snapshot, relevant DJ controls and an option to delete the snapshot.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+A short video of my features: https://unisa.zoom.us/rec/share/phAKj6YzWnp94W7B2X-UqoB-PqGGhLyTGTkVRDYIrfvoXGfKZ9VTW6Sncik8JMTS.c1sAyB4F7cHGeJti
