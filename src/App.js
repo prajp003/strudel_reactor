@@ -1,4 +1,4 @@
-﻿import './App.css';
+import './App.css';
 import { useEffect, useRef, useState } from "react";
 import { StrudelMirror } from '@strudel/codemirror';
 import { evalScope } from '@strudel/core';
@@ -313,10 +313,9 @@ return (
                 </div>
 
                 <div className="row">
-                    <div className="col-md-6" style={{ maxHeight: '50vh', overflowY: 'auto' }}>
+                    <div className="col-md-6" style={{ maxHeight: '60vh', overflowY: 'auto' }}>
                         <div id="editor" />
                         <div id="output" />
-                        
                         
                     </div>
                     <div className="col-md-6">
