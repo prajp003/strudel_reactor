@@ -275,39 +275,53 @@ return (
                     </div>
                     
                     <div className="col-md-6">
-                        
-                        <nav className="d-flex justify-content-center">
-                            <div className="row border border-secondary rounded p-2 align-items-center justify-content-between " style={{ maxWidth: "95%" }}>
-                                {/*<ProcButtons onProc={handleProc} onProcAndPlay={handleProcAndPlay} /> */}
-                                <div className="col-auto">
+
+                        {selectedGraph === "live" ?
+                            (<><nav className="d-flex justify-content-center">
+                                <div className="row border border-secondary rounded p-2 align-items-center justify-content-between " style={{ maxWidth: "95%" }}>
+                                    {/*<ProcButtons onProc={handleProc} onProcAndPlay={handleProcAndPlay} /> */}
+                                    <div className="col-auto">
+                                            <PlayButtons onPlay={handlePlay} onStop={handleStop} />
+                                    </div>
+
+
+                                    <div className="col-md-6">
+                                        <VolumeSlider volume={volume} onVolumeChange={handleVolumeChange} gainPatternUpdate={gainPattern} bpmUpdate={bpm} instrumentUpdate={instruments} />
+                                    </div>
+                                    <div className="col-md-3">
+                                        <BPMSelector bpm={bpm} onBpmChange={handleBpmChange} />
+                                    </div>
+                                </div>
+
+
+                            </nav>
+                                <DJControls
+                                    gainPattern={gainPattern} onGainPatternChange={handleGainPatternChange} onInstrumentToggle={handleInstrumentToggle}
+                                /></>)
+                            :
+                            (<>
+                                
+                                <div className="border border-secondary rounded p-3">
+                                    <div className="row">
+                                        <div className="col col-auto d-flex align-items-center">
+                                            <p className="m-0">Snapshot Settings</p>
+                                        </div>
+                                        <div className="col col-auto">
+                                            <button className="btn btn-primary" onClick={() => {
+                                                setGraphPresets(
+                                                    prev => prev.filter((_, i) => i !== Number(selectedGraph))); setSelectedGraph("live");
+                                            }}>Delete snapshot</button>
+                                        </div>
+                                    </div>
                                     
-                                    {selectedGraph === "live" ?
 
-                                        (<PlayButtons onPlay={handlePlay} onStop={handleStop} />)
-                                        :
-                                        (<button className="btn btn-primary" onClick={() => {
-                                            setGraphPresets(
-                                                prev => prev.filter((_, i) => i !== Number(selectedGraph))); setSelectedGraph("live");
-                                        }}>Delete</button>)
-
-                                    }
+                                    <pre style={{
+                                        background: "#f8f9fa", padding: "1px", maxHeight: "150px", overflowY: "auto"
+                                    }}>
+                                        {JSON.stringify(graphPresets[selectedGraph].settings, null, 1)}
+                                    </pre>
                                 </div>
-                                
-                                
-                                <div className="col-md-6">
-                                    <VolumeSlider volume={volume} onVolumeChange={handleVolumeChange} gainPatternUpdate={gainPattern} bpmUpdate={bpm} instrumentUpdate={instruments}/>
-                                </div>
-                                <div className="col-md-3">
-                                    <BPMSelector bpm={bpm} onBpmChange={ handleBpmChange }/>
-                                </div>
-                            </div>
-
-
-                        </nav>
-                        <DJControls
-                            gainPattern={gainPattern} onGainPatternChange={handleGainPatternChange} onInstrumentToggle={handleInstrumentToggle}
-                        />
-                        
+                            </>)}
                     </div>
 
                 </div>
@@ -318,8 +332,9 @@ return (
                         <div id="output" />
                         
                     </div>
-                    <div className="col-md-6">
 
+                    <div className="col-md-6">
+                        
                         <Graph mode={selectedGraph === "live" ? graphMode : graphPresets[selectedGraph].mode} data={selectedGraph === "live" ? strudelData : graphPresets[selectedGraph].data} />
                         <div className="row mb-3 align-items-center">
                            
