@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\nunga\\source\\repos\\strudel_reactor\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|c:\\users\\nunga\\source\\repos\\strudel_reactor\\src\\components\\volumeslider.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\components\\volumeslider.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|c:\\users\\nunga\\source\\repos\\strudel_reactor\\src\\app.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\app.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|c:\\users\\nunga\\source\\repos\\strudel_reactor\\src\\console-monkey-patch.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\console-monkey-patch.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|c:\\users\\nunga\\source\\repos\\strudel_reactor\\src\\components\\djcontrols.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
@@ -15,24 +19,20 @@
       "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\components\\bpmselector.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|c:\\users\\nunga\\source\\repos\\strudel_reactor\\src\\app.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\app.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|c:\\users\\nunga\\source\\repos\\strudel_reactor\\src\\components\\volumeslider.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\components\\volumeslider.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|c:\\users\\nunga\\source\\repos\\strudel_reactor\\src\\components\\graph.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\components\\graph.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|c:\\users\\nunga\\source\\repos\\strudel_reactor\\src\\components\\preproctext.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\components\\preproctext.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|c:\\users\\nunga\\source\\repos\\strudel_reactor\\src\\console-monkey-patch.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\console-monkey-patch.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|c:\\users\\nunga\\source\\repos\\strudel_reactor\\src\\tunes.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\tunes.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|c:\\users\\nunga\\source\\repos\\strudel_reactor\\src\\components\\preproctext.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{1C538C04-AF09-44AC-9272-6DDEAA808F25}|ReactAssignment.esproj|solutionrelative:src\\components\\preproctext.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,100 +50,107 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
+              "Title": "PreProcText.jsx",
+              "DocumentMoniker": "C:\\Users\\nunga\\source\\repos\\strudel_reactor\\src\\components\\PreProcText.jsx",
+              "RelativeDocumentMoniker": "src\\components\\PreProcText.jsx",
+              "ToolTip": "C:\\Users\\nunga\\source\\repos\\strudel_reactor\\src\\components\\PreProcText.jsx",
+              "RelativeToolTip": "src\\components\\PreProcText.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-11-07T13:52:32.972Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DJControls.jsx",
+              "DocumentMoniker": "C:\\Users\\nunga\\source\\repos\\strudel_reactor\\src\\components\\DJControls.jsx",
+              "RelativeDocumentMoniker": "src\\components\\DJControls.jsx",
+              "ToolTip": "C:\\Users\\nunga\\source\\repos\\strudel_reactor\\src\\components\\DJControls.jsx",
+              "RelativeToolTip": "src\\components\\DJControls.jsx",
+              "ViewState": "AgIAABcAAAAAAAAAAAAAwDIAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-11-07T13:52:20.425Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "VolumeSlider.jsx",
               "DocumentMoniker": "C:\\Users\\nunga\\source\\repos\\strudel_reactor\\src\\components\\VolumeSlider.jsx",
               "RelativeDocumentMoniker": "src\\components\\VolumeSlider.jsx",
               "ToolTip": "C:\\Users\\nunga\\source\\repos\\strudel_reactor\\src\\components\\VolumeSlider.jsx",
               "RelativeToolTip": "src\\components\\VolumeSlider.jsx",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAwBwAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
               "WhenOpened": "2025-11-07T14:32:31.035Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "PreProcText.jsx",
-              "DocumentMoniker": "C:\\Users\\nunga\\source\\repos\\strudel_reactor\\src\\components\\PreProcText.jsx",
-              "RelativeDocumentMoniker": "src\\components\\PreProcText.jsx",
-              "ToolTip": "C:\\Users\\nunga\\source\\repos\\strudel_reactor\\src\\components\\PreProcText.jsx",
-              "RelativeToolTip": "src\\components\\PreProcText.jsx",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2025-11-07T13:52:32.972Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DJControls.jsx",
-              "DocumentMoniker": "C:\\Users\\nunga\\source\\repos\\strudel_reactor\\src\\components\\DJControls.jsx",
-              "RelativeDocumentMoniker": "src\\components\\DJControls.jsx",
-              "ToolTip": "C:\\Users\\nunga\\source\\repos\\strudel_reactor\\src\\components\\DJControls.jsx",
-              "RelativeToolTip": "src\\components\\DJControls.jsx",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2025-11-07T13:52:20.425Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "BPMSelector.jsx",
               "DocumentMoniker": "C:\\Users\\nunga\\source\\repos\\strudel_reactor\\src\\components\\BPMSelector.jsx",
               "RelativeDocumentMoniker": "src\\components\\BPMSelector.jsx",
               "ToolTip": "C:\\Users\\nunga\\source\\repos\\strudel_reactor\\src\\components\\BPMSelector.jsx",
               "RelativeToolTip": "src\\components\\BPMSelector.jsx",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABQAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2025-11-07T13:51:46.364Z"
+              "WhenOpened": "2025-11-07T13:51:46.364Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "tunes.js",
               "DocumentMoniker": "C:\\Users\\nunga\\source\\repos\\strudel_reactor\\src\\tunes.js",
               "RelativeDocumentMoniker": "src\\tunes.js",
               "ToolTip": "C:\\Users\\nunga\\source\\repos\\strudel_reactor\\src\\tunes.js",
               "RelativeToolTip": "src\\tunes.js",
-              "ViewState": "AgIAAFgAAAAAAAAAAAAAAGIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-11-07T13:16:37.117Z"
+              "WhenOpened": "2025-11-07T13:16:37.117Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Graph.jsx",
               "DocumentMoniker": "C:\\Users\\nunga\\source\\repos\\strudel_reactor\\src\\components\\Graph.jsx",
               "RelativeDocumentMoniker": "src\\components\\Graph.jsx",
               "ToolTip": "C:\\Users\\nunga\\source\\repos\\strudel_reactor\\src\\components\\Graph.jsx",
               "RelativeToolTip": "src\\components\\Graph.jsx",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF0AAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAAAGYAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2025-11-07T12:59:40.751Z"
+              "WhenOpened": "2025-11-07T12:59:40.751Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "console-monkey-patch.js",
               "DocumentMoniker": "C:\\Users\\nunga\\source\\repos\\strudel_reactor\\src\\console-monkey-patch.js",
               "RelativeDocumentMoniker": "src\\console-monkey-patch.js",
               "ToolTip": "C:\\Users\\nunga\\source\\repos\\strudel_reactor\\src\\console-monkey-patch.js",
               "RelativeToolTip": "src\\console-monkey-patch.js",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAqwA8AAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-11-06T23:48:45.685Z"
+              "WhenOpened": "2025-11-06T23:48:45.685Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "App.js",
               "DocumentMoniker": "C:\\Users\\nunga\\source\\repos\\strudel_reactor\\src\\App.js",
               "RelativeDocumentMoniker": "src\\App.js",
               "ToolTip": "C:\\Users\\nunga\\source\\repos\\strudel_reactor\\src\\App.js",
               "RelativeToolTip": "src\\App.js",
-              "ViewState": "AgIAAAkBAAAAAAAAAAAQwBUBAACAAAAAAAAAAA==",
+              "ViewState": "AgIAAAcBAAAAAAAAAAAuwBoBAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-11-03T02:23:43.037Z"
+              "WhenOpened": "2025-11-03T02:23:43.037Z",
+              "EditorCaption": ""
             }
           ]
         }

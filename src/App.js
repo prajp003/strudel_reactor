@@ -269,7 +269,7 @@ return (
                     <div className="col-md-6" style={{ maxHeight: '40vh', overflowY: 'auto' }}>
                         {(
                             <div className="border border-secondary p-3">
-                                <PreProcText defaultValue={songText} onChange={(e) => setSongText(e.target.value)} />
+                                <PreProcText defaultValue={songText} onChange={(e) => setSongText(e.target.value)}/>
                             </div>
                         )}
                     </div>
@@ -280,7 +280,17 @@ return (
                             <div className="row border border-secondary rounded p-2 align-items-center justify-content-between " style={{ maxWidth: "95%" }}>
                                 {/*<ProcButtons onProc={handleProc} onProcAndPlay={handleProcAndPlay} /> */}
                                 <div className="col-auto">
-                                    <PlayButtons onPlay={handlePlay} onStop={handleStop} />
+                                    
+                                    {selectedGraph === "live" ?
+
+                                        (<PlayButtons onPlay={handlePlay} onStop={handleStop} />)
+                                        :
+                                        (<button className="btn btn-primary" onClick={() => {
+                                            setGraphPresets(
+                                                prev => prev.filter((_, i) => i !== Number(selectedGraph))); setSelectedGraph("live");
+                                        }}>Delete</button>)
+
+                                    }
                                 </div>
                                 
                                 
